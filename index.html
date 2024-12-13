@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CGPA Calculator</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ margin: 20px;
+ }
+ label, input {
+ display: block;
+ margin: 10px 0;
+ }
+ button {
+ margin: 10px 0;
+ }
+ #result {
+ font-weight: bold;
+ }
+ </style>
+</head>
+<body>
+ <h1>CGPA Calculator</h1>
+ <form id="cgpaForm">
+ <label for="gpa1">GPA for Semester 1:</label>
+ <input type="number" id="gpa1" name="gpa1" step="0.01" min="0" max="10" required>
+ <label for="gpa2">GPA for Semester 2:</label>
+ <input type="number" id="gpa2" name="gpa2" step="0.01" min="0" max="10" required>
+ 
+ <label for="gpa3">GPA for Semester 3:</label>
+ <input type="number" id="gpa3" name="gpa3" step="0.01" min="0" max="10" required>
+ 
+ <label for="gpa4">GPA for Semester 4:</label>
+ <input type="number" id="gpa4" name="gpa4" step="0.01" min="0" max="10" required>
+ <label for="gpa5">GPA for Semester 5:</label>
+ <input type="number" id="gpa5" name="gpa5" step="0.01" min="0" max="10" required>
+ 
+ <label for="gpa6">GPA for Semester 6:</label>
+ <input type="number" id="gpa6" name="gpa6" step="0.01" min="0" max="10" required>
+ 
+ <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+ </form>
+ <h2>Overall CGPA: <span id="result"></span></h2>
+ <script>
+ function calculateCGPA() {
+ var gpa1 = parseFloat(document.getElementById('gpa1').value);
+ var gpa2 = parseFloat(document.getElementById('gpa2').value);
+ var gpa3 = parseFloat(document.getElementById('gpa3').value);
+ var gpa4 = parseFloat(document.getElementById('gpa4').value);
+ var gpa5 = parseFloat(document.getElementById('gpa5').value);
+ var gpa6 = parseFloat(document.getElementById('gpa6').value);
+ var totalGPA = gpa1 + gpa2 + gpa3 + gpa4 + gpa5 + gpa6;
+ var cgpa = totalGPA / 6;
+ 
+ document.getElementById('result').innerText = cgpa.toFixed(2);
+ }
+ </script>
+</body>
+</html>
